@@ -107,5 +107,11 @@ def generate_password():
 
 # This copies the password to the clipboard for the user to paste where they please    
     pyperclip.copy(password)
+
+# TODO:
+# Save past generated passwords, up to 10+
+# Separate x amount of letters with '-' or '.'
+# Encrypt past passwords
+# Clean up code.
     
 generate_password()
