@@ -51,18 +51,43 @@ def encrypt():
     
     return pt_encryp_string, rot
     
-    
-
 
 
 def decrypt():
-    decrypt_string = encrypt()
-    rot = decrypt_string[1]
-    
+    encrypted = encrypt()
+    encrypted_string = encrypted[0]
+    rotation = encrypted[1]
+    plaintext_decrypted = []
+    encrypted_string_list = list(encrypted_string)
 
-    print(decrypt_string[0])
-    print(rot)
+    print("Decrypting...")
+    for letter in encrypted_string:
+        rot = alphabet.index(letter)
+        try:
+            rot = rot - rotation
+            if rot < 0:
+                plaintext_decrypted.append(alphabet[rot])
+#                print("PASS")
+            else:
+                plaintext_decrypted.append(alphabet[rot])
+
+            
+        except:
+            pass
+
+    pt_decrypt_string = ''.join(plaintext_decrypted)
+    print(pt_decrypt_string)
+#        print(letter)
+#        if letter in alphabet:
+            
+
+#    print(decrypt_string)
+#    print(rot)
 
 #encrypt()
 
 decrypt()
+
+
+#FIXME:
+# decrypt does not fully work
